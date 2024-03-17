@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+std::string reverseString(const std::string& input) {
+    std::string reversed;
+
+    for (int i = input.length() - 1; i >= 0; --i) {
+        reversed.push_back(input[i]);
+    }
+
+    return reversed;
+}
+
+int main() {
+   
+    std::string original;
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, original);
+
+    std::string reversed = reverseString(original);
+    std::cout << "Reversed string: " << reversed << std::endl;
+
+    return 0;
+}

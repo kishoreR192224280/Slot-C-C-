@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main() {
+    const int maxSize = 100; // Change this according to your needs
+    int arr[maxSize];
+    int size;
+
+    std::cout << "Enter the size of the array: ";
+    std::cin >> size;
+
+    std::cout << "Enter " << size << " elements:\n";
+    for (int i = 0; i < size; ++i) {
+        std::cin >> arr[i];
+    }
+
+    int firstLargest = arr[0];
+    int secondLargest = arr[0];
+
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > firstLargest) {
+            secondLargest = firstLargest;
+            firstLargest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != firstLargest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    std::cout << "Second largest element: " << secondLargest << std::endl;
+
+    return 0;
+}

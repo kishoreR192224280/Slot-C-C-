@@ -1,0 +1,59 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Vector3D {
+private:
+    double x, y, z;
+
+public:
+   
+    Vector3D(double x_val = 0.0, double y_val = 0.0, double z_val = 0.0)
+        : x(x_val), y(y_val), z(z_val) {}
+
+    Vector3D operator+(const Vector3D& v) const {
+        return Vector3D(x + v.x, y + v.y, z + v.z);
+    }
+
+    Vector3D operator-(const Vector3D& v) const {
+        return Vector3D(x - v.x, y - v.y, z - v.z);
+    }
+    Vector3D operator*(double scalar) const {
+        return Vector3D(x * scalar, y * scalar, z * scalar);
+    }
+    Vector3D cross(const Vector3D& v) const {
+        return Vector3D(y * v.z - z * v.y, z * v.x - x * v.z, x * v.y - y * v.x);
+    }
+
+    void display() const {
+        cout << "(" << x << ", " << y << ", " << z << ")";
+    }
+};
+
+int main() {
+   
+    Vector3D v1(1.0, 2.0, 3.0);
+    Vector3D v2(4.0, 5.0, 6.0);
+
+    Vector3D sum = v1 + v2;
+    cout << "Sum: ";
+    sum.display();
+    cout << endl;
+
+    Vector3D diff = v1 - v2;
+    cout << "Difference: ";
+    diff.display();
+    cout << endl;
+    
+    Vector3D scaled = v1 * 2.0;
+    cout << "Scaled: ";
+    scaled.display();
+    cout << endl;
+
+    Vector3D cross_product = v1.cross(v2);
+    cout << "Cross Product: ";
+    cross_product.display();
+    cout << endl;
+
+    return 0;
+}

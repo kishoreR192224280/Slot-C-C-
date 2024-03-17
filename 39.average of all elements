@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main() {
+    const int maxSize = 100; // Change this according to your needs
+    int arr[maxSize];
+    int size;
+    double sum = 0, average;
+
+    std::cout << "Enter the size of the array: ";
+    std::cin >> size;
+
+    std::cout << "Enter " << size << " elements:\n";
+    for (int i = 0; i < size; ++i) {
+        std::cin >> arr[i];
+        sum += arr[i];
+    }
+
+    if (size > 0) {
+        average = sum / size;
+        std::cout << "Average of array elements: " << average << std::endl;
+    } else {
+        std::cout << "Cannot calculate average for an empty array." << std::endl;
+    }
+
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <iostream>
+
+int& modifyValue(int &num);
+
+int main() {
+    int number = 10;
+
+    std::cout << "Before modification: " << number << std::endl;
+
+    modifyValue(number) = 20;
+
+    std::cout << "After modification: " << number << std::endl;
+
+    return 0;
+}
+
+int& modifyValue(int &num) {
+    
+    num++;
+    
+    return num;
+}

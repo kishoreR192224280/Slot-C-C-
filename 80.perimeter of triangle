@@ -1,0 +1,57 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double area(double side);
+double area(double length, double width);
+double area(double base, double height);
+double perimeter(double side);
+double perimeter(double length, double width);
+double perimeter(double side1, double side2, double side3);
+
+const double PI = 3.14159;
+
+double area(double side) {
+    return side * side;
+}
+
+double area(double length, double width) {
+    return length * width;
+}
+
+double area(double radius) {
+    return PI * radius * radius;
+}
+
+double area(double base, double height) {
+    return 0.5 * base * height;
+}
+
+double perimeter(double side) {
+    return 4 * side;
+}
+
+
+double perimeter(double length, double width) {
+    return 2 * (length + width);
+}
+
+double perimeter(double side1, double side2, double side3) {
+    return side1 + side2 + side3;
+}
+
+int main() {
+   
+    cout << "Area of square (side=4): " << area(4) << endl;
+    cout << "Perimeter of square (side=4): " << perimeter(4) << endl;
+
+    cout << "Area of rectangle (length=4, width=5): " << area(4, 5) << endl;
+    cout << "Perimeter of rectangle (length=4, width=5): " << perimeter(4, 5) << endl;
+
+    cout << "Area of circle (radius=3): " << area(3) << endl;
+
+    cout << "Area of triangle (base=4, height=3): " << area(4, 3) << endl;
+    cout << "Perimeter of triangle (sides=3, 4, 5): " << perimeter(3, 4, 5) << endl;
+
+    return 0;
+}

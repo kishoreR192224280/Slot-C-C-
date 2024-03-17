@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+double convertCelsiusToFahrenheit(double celsius) {
+    return (celsius * 9 / 5) + 32;
+}
+int main() {
+    vector<double> celsiusValues = {4.4, 10, 12, 7, 70};
+    vector<double> fahrenheitValues;
+    for (double celsius : celsiusValues) {
+        double fahrenheit = convertCelsiusToFahrenheit(celsius);
+        fahrenheitValues.push_back(fahrenheit);
+    }
+    cout << "Celsius values: ";
+    for (double celsius : celsiusValues) {
+        cout << celsius << " ";
+    }
+    cout << "\nFahrenheit values: ";
+    for (double fahrenheit : fahrenheitValues) {
+        cout << fahrenheit << " ";
+    }
+    cout << endl;
+    return 0;
+}

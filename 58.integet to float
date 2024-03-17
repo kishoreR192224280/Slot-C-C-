@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+    
+    int integerValue = 10;
+
+    float floatValue;
+
+    floatValue = integerValue;
+
+   
+    std::cout << "Integer value: " << integerValue << std::endl;
+    std::cout << "Float value (assigned from integer): " << floatValue << std::endl;
+
+    return 0;
+}

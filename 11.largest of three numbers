@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    const int numberOfNumbers = 3; 
+    std::vector<int> numbers;
+
+    
+    std::cout << "Enter " << numberOfNumbers << " numbers:\n";
+    for (int i = 0; i < numberOfNumbers; ++i) {
+        int num;
+        std::cin >> num;
+        numbers.push_back(num);
+    }
+
+ 
+    std::sort(numbers.rbegin(), numbers.rend());
+
+    std::cout << "The largest three numbers are: ";
+    for (int i = 0; i < numberOfNumbers; ++i) {
+        std::cout << numbers[i] << " ";
+    }
+
+    return 0;
+}

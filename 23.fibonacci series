@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int findNthFibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    int firstTerm = 0, secondTerm = 1, nextTerm;
+    for (int i = 2; i <= n; ++i) {
+        nextTerm = firstTerm + secondTerm;
+        firstTerm = secondTerm;
+        secondTerm = nextTerm;
+    }
+    return secondTerm;
+}
+int main() {
+    int n;
+    cout << "Enter the value of N to find the Nth Fibonacci number: ";
+    cin >> n;
+    int nthFibonacci = findNthFibonacci(n);
+    cout << "The " << n << "th Fibonacci number is: " << nthFibonacci << endl;
+    return 0;
+}

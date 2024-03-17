@@ -1,0 +1,24 @@
+#include <iostream>
+
+void swapValues(int &a, int &b);
+
+int main() {
+    int num1 = 5;
+    int num2 = 7;
+
+    std::cout << "Before swapping:" << std::endl;
+    std::cout << "num1 = " << num1 << ", num2 = " << num2 << std::endl;
+
+    swapValues(num1, num2);
+
+    std::cout << "After swapping:" << std::endl;
+    std::cout << "num1 = " << num1 << ", num2 = " << num2 << std::endl;
+
+    return 0;
+}
+
+void swapValues(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}

@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+
+double area(double length, double width) {
+    return length * width;
+}
+double area(double radius) {
+    const double PI = 3.141592653589793;
+    return PI * pow(radius, 2);
+}
+
+int main() {
+    double length, width, radius;
+
+    std::cout << "Enter the length and width of the rectangle: ";
+    std::cin >> length >> width;
+
+    std::cout << "Area of the rectangle: " << area(length, width) << std::endl;
+
+    std::cout << "Enter the radius of the circle: ";
+    std::cin >> radius;
+
+    std::cout << "Area of the circle: " << area(radius) << std::endl;
+
+    return 0;
+}

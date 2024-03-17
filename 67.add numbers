@@ -1,0 +1,19 @@
+#include <iostream>
+
+
+int addNumbers(int num1, int num2);
+
+int main() {
+    int a = 5;
+    int b = 7;
+    
+    int sum = addNumbers(a, b);
+    
+    std::cout << "The sum of " << a << " and " << b << " is: " << sum << std::endl;
+    
+    return 0;
+}
+
+int addNumbers(int num1, int num2) {
+    return num1 + num2;
+}

@@ -1,0 +1,31 @@
+#include <iostream>
+#include <utility>
+#include <climits>
+using namespace std;
+
+pair<int, int>& findMaxMin(const int arr[], int size) {
+    static pair<int, int> maxMinPair(INT_MIN, INT_MAX);
+
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] > maxMinPair.first) {
+            maxMinPair.first = arr[i]; // Update maximum if found
+        }
+        if (arr[i] < maxMinPair.second) {
+            maxMinPair.second = arr[i]; // Update minimum if found
+        }
+    }
+
+    return maxMinPair;
+}
+
+int main() {
+    const int SIZE = 5;
+    int arr[SIZE] = {5, 3, 9, 1, 7};
+
+    pair<int, int>& result = findMaxMin(arr, SIZE);
+
+    cout << "Maximum element: " << result.first << endl;
+    cout << "Minimum element: " << result.second << endl;
+
+    return 0;
+}

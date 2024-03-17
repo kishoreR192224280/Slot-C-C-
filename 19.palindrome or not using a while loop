@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <cctype> // for std::tolower
+
+using namespace std;
+
+int main() {
+    string str;
+    
+    
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    
+    string cleanStr;
+    for (char c : str) {
+        if (!isspace(c)) {
+            cleanStr += tolower(c);
+        }
+    }
+
+   
+    int i = 0;
+    int j = cleanStr.length() - 1;
+    bool isPalindrome = true;
+    while (i < j) {
+        if (cleanStr[i] != cleanStr[j]) {
+            isPalindrome = false;
+            break;
+        }
+        i++;
+        j--;
+    }
+
+   
+    if (isPalindrome) {
+        cout << "\"" << str << "\" is a palindrome." << endl;
+    } else {
+        cout << "\"" << str << "\" is not a palindrome." << endl;
+    }
+
+    return 0;
+}

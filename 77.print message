@@ -1,0 +1,14 @@
+#include <iostream>
+
+void printMessage(const std::string& message = "Hello");
+
+int main() {
+  
+    printMessage();
+
+    return 0;
+}
+
+void printMessage(const std::string& message) {
+    std::cout << message << std::endl;
+}
